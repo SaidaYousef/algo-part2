@@ -1,0 +1,62 @@
+//solving exercice using procedure 
+PROCEDURE dot_product(V1,V2)
+VAR
+    ps: FLOAT;
+BEGIN
+    ps := |V1|*|V2|*cos θ;
+END
+
+ALGORITHM Dot product 
+VAR
+    n, i, j: INTEGER;
+    ARR1, ARR2, : ARRAY_OF INTEGER[n];
+    p1, p2: INTEGER;
+BEGIN
+    Read(n);
+    Read(ARR1);
+    Read(ARR2);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+      FOR j FROM 0 TO n-1 STEP 1  DO
+          p1:= ARR1[i];
+          p2:= ARR2[j];
+          IF (dot_product (p1,p2)=0) THEN
+          Write("The two vectors are orthogonal")
+          ELSE
+          Write("The two vectors are not orthogonal")
+          END_IF
+      END_FOR
+    END_FOR
+END
+
+//now solving the same problem using a function instead
+
+FUNCTION dot_product(VAR V1,V2)
+VAR
+    ps: FLOAT;
+BEGIN
+    ps := |V1|*|V2|*cos θ;
+END
+
+ALGORITHM Dot product 
+VAR
+    n, i, j: INTEGER;
+    ARR1, ARR2, : ARRAY_OF INTEGER[n];
+    V1, V2: INTEGER;
+    ps:FLOAT;
+BEGIN
+    Read(n);
+    Read(ARR1);
+    Read(ARR2);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+      FOR j FROM 0 TO n-1 STEP 1  DO
+          V1:= ARR1[i];
+          V2:= ARR2[j];
+          ps:= dot_product(V1,V2);
+          IF (ps=0) THEN
+          Write("The two vectors are orthogonal")
+          ELSE
+          Write("The two vectors are not orthogonal")
+          END_IF
+      END_FOR
+    END_FOR
+END
